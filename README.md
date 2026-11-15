@@ -161,10 +161,8 @@ cinema/
 │   │   └── context/      # Shared application state
 │   └── package.json
 ├── README.md
-├── TECHNICAL_REPORT.md
 ├── DIAGRAMS.md
-├── TEST_EVIDENCE.md
-└── WALKTHROUGH_SCRIPT.md
+└── TEST_EVIDENCE.md
 ```
 
 ## Environment Configuration
@@ -429,6 +427,5 @@ This changes the policy only for the current PowerShell process.
 
 ## Related Documentation
 
-- [Technical Report](./TECHNICAL_REPORT.md) — architectural and implementation decisions.
 - [Architecture and ER Diagrams](./DIAGRAMS.md) — system diagrams.
 - [Test Evidence](./TEST_EVIDENCE.md) — recorded automated test output.
