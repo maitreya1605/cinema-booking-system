@@ -34,7 +34,7 @@ export default function RenderNoticeBanner() {
               setDismissed(true);
               try {
                 sessionStorage.setItem('pixora_render_banner_dismissed', 'true');
-              } catch {}
+              } catch { }
             }
           }, 5000);
           return () => clearTimeout(hideTimer);
@@ -64,7 +64,7 @@ export default function RenderNoticeBanner() {
     setDismissed(true);
     try {
       sessionStorage.setItem('pixora_render_banner_dismissed', 'true');
-    } catch {}
+    } catch { }
   };
 
   if (dismissed) return null;
@@ -97,11 +97,11 @@ export default function RenderNoticeBanner() {
         </div>
 
         {/* Message */}
-        <p className="text-[11px] sm:text-xs leading-tight">
+        <p className="truncate text-[11px] sm:text-xs">
           {backendStatus === 'ready' ? (
             <span className="text-emerald-400 font-medium flex items-center gap-1">
-              <CheckCircle2 className="w-3.5 h-3.5 inline text-emerald-400 flex-shrink-0" />
-              <span>Backend service active &amp; ready. Enjoy the show!</span>
+              <CheckCircle2 className="w-3.5 h-3.5 inline text-emerald-400" />
+              Backend service active & ready. Enjoy the show!
             </span>
           ) : (
             <span>
