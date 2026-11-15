@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #090a0e;
+    color: #ede9e3;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.01em;
+  }
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #090a0e;
+}
+
+/* Custom cinematic scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090a0e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c202b;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3040;
+}
+
+/* 35mm Celluloid Noir & Warm Tungsten Palette Tokens */
+:root {
+  --cinema-noir: #090a0e;
+  --cinema-surface: #111319;
+  --cinema-elevated: #171b24;
+  --cinema-border: rgba(237, 233, 227, 0.08);
+  --cinema-border-hover: rgba(229, 169, 60, 0.35);
+  --cinema-amber: #e5a93c;
+  --cinema-amber-light: #f3c562;
+  --cinema-amber-dark: #b88022;
+  --cinema-bone: #ede9e3;
+  --cinema-muted: #9e988e;
+  --cinema-velvet: #e11d48;
+
+  /* Backward compatibility tokens */
+  --midnight-black: #090a0e;
+  --midnight-surface: #111319;
+  --midnight-elevated: #171b24;
+  --champagne-gold: #e5a93c;
+  --champagne-light: #f3c562;
+  --champagne-dark: #b88022;
+}
+
+/* Atmospheric glow utilities */
+.glow-amber {
+  box-shadow: 0 0 25px -4px rgba(229, 169, 60, 0.3);
+}
+
+.glow-amber-sm {
+  box-shadow: 0 0 12px -2px rgba(229, 169, 60, 0.2);
+}
+
+.glow-gold {
+  box-shadow: 0 0 25px -4px rgba(229, 169, 60, 0.3);
+}
+
+.glow-gold-sm {
+  box-shadow: 0 0 12px -2px rgba(229, 169, 60, 0.2);
+}
+
+/* Projection beam lighting effect */
+.projection-beam {
+  background: radial-gradient(ellipse 70% 40% at 50% 0%, rgba(229, 169, 60, 0.12) 0%, rgba(229, 169, 60, 0) 70%);
+}
+
+/* Refined Cinema Buttons */
+.btn-cinema {
+  background: #e5a93c;
+  color: #090a0e;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px -2px rgba(229, 169, 60, 0.25);
+}
+
+.btn-cinema:hover {
+  background: #f3c562;
+  box-shadow: 0 6px 22px -2px rgba(229, 169, 60, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-cinema-outline {
+  background: transparent;
+  color: #ede9e3;
+  border: 1px solid rgba(237, 233, 227, 0.18);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-cinema-outline:hover {
+  background: rgba(229, 169, 60, 0.1);
+  border-color: #e5a93c;
+  color: #ffffff;
+}
+
+/* Backward compatibility button mappings */
+.btn-champagne {
+  background: #e5a93c;
+  color: #090a0e;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 16px -2px rgba(229, 169, 60, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-champagne:hover {
+  background: #f3c562;
+  box-shadow: 0 6px 22px -2px rgba(229, 169, 60, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-champagne-outline {
+  background: transparent;
+  color: #ede9e3;
+  border: 1px solid rgba(229, 169, 60, 0.4);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-champagne-outline:hover {
+  background: rgba(229, 169, 60, 0.12);
+  border-color: #e5a93c;
+  color: #ffffff;
+}
+
+/* Authentic physical ticket stub perforations */
+.ticket-perforation-v {
+  background-image: radial-gradient(circle at 0% 50%, transparent 10px, #111319 11px),
+    radial-gradient(circle at 100% 50%, transparent 10px, #111319 11px);
+}
