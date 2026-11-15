@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { CinemaProvider } from './context/CinemaContext';
+import RenderNoticeBanner from './components/RenderNoticeBanner';
 import MainLayout from './layouts/MainLayout';
 import LandingHomePage from './components/LandingHomePage';
 import CatalogPage from './pages/CatalogPage';
@@ -14,6 +15,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <CinemaProvider>
+        <RenderNoticeBanner />
         <Routes>
           {/* Dedicated Full-Screen Landing Page */}
           <Route path="/" element={<LandingHomePage />} />
