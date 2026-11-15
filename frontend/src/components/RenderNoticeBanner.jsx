@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Server, X, CheckCircle2, Zap } from 'lucide-react';
+import { apiUrl } from '../config/api';
 
 export default function RenderNoticeBanner() {
   const [dismissed, setDismissed] = useState(() => {
@@ -24,7 +25,7 @@ export default function RenderNoticeBanner() {
 
     const checkHealth = async () => {
       try {
-        const res = await fetch('/api/health');
+        const res = await fetch(apiUrl('/api/health'));
         if (res.ok && isMounted) {
           setBackendStatus('ready');
           // Auto-hide after 5 seconds once backend is confirmed ready

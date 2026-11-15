@@ -167,12 +167,24 @@ cinema/
 
 ## Environment Configuration
 
-Create a file named `.env` inside the `backend` directory.
+### Backend `.env`
+
+Create a file named `.env` inside the `backend` directory (or copy from `backend/.env.example`):
 
 ```env
 PORT=8000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=replace_with_a_long_random_secret
+```
+
+### Frontend `.env`
+
+Create a file named `.env` inside the `frontend` directory (or copy from `frontend/.env.example`):
+
+```env
+# For local dev with Vite proxy: leave empty
+# For Render deployment: set to your deployed backend URL
+VITE_API_BASE_URL=https://your-backend.onrender.com
 ```
 
 Replace the placeholder values with your own configuration.

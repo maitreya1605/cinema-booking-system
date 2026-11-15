@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { apiUrl } from '../config/api';
 
 export function useMovieBooking({
   movie,
@@ -43,7 +44,7 @@ export function useMovieBooking({
   // Fetch real shows from backend
   const fetchShowData = useCallback(async (silent = false) => {
     try {
-      const res = await fetch('/api/shows');
+      const res = await fetch(apiUrl('/api/shows'));
       if (res.ok) {
         const data = await res.json();
         if (data?.shows?.length > 0) {
@@ -156,7 +157,7 @@ export function useMovieBooking({
     setIsSubmitting(true);
     try {
       const showId = liveShow?._id || '6af1fcba7a37522313c73a44';
-      const bookingRes = await fetch('/api/bookings', {
+      const bookingRes = await fetch(apiUrl('/api/bookings'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

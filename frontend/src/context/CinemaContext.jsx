@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { RECOMMENDATIONS } from '../data/moviesData';
+import { apiUrl } from '../config/api';
 
 const CinemaContext = createContext(null);
 
@@ -45,7 +46,7 @@ export function CinemaProvider({ children }) {
   useEffect(() => {
     async function fetchBackendMovies() {
       try {
-        const res = await fetch('/api/movies');
+        const res = await fetch(apiUrl('/api/movies'));
         if (res.ok) {
           const data = await res.json();
           if (data && data.movies && data.movies.length > 0) {
@@ -127,7 +128,7 @@ export function CinemaProvider({ children }) {
     setIsLoadingTheaters(true);
     try {
       const url = city && city !== 'All' ? `/api/theaters?city=${encodeURIComponent(city)}` : '/api/theaters';
-      const res = await fetch(url);
+      const res = await fetch(apiUrl(url));
       if (res.ok) {
         const data = await res.json();
         if (data && data.theaters) {

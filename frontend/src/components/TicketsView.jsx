@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Ticket, Calendar, Clock, MapPin, QrCode, AlertCircle, Trash2, CheckCircle2 } from 'lucide-react';
+import { apiUrl } from '../config/api';
 
 export default function TicketsView({ onBookNew }) {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ export default function TicketsView({ onBookNew }) {
         return;
       }
 
-      const res = await fetch('/api/bookings/my-tickets', {
+      const res = await fetch(apiUrl('/api/bookings/my-tickets'), {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -47,7 +48,7 @@ export default function TicketsView({ onBookNew }) {
     try {
       const token = localStorage.getItem('token');
       if (token) {
-        await fetch(`/api/bookings/${ticketId}/cancel`, {
+        await fetch(apiUrl(`/api/bookings/${ticketId}/cancel`), {
           method: 'POST',
           headers: { 'Authorization': `Bearer ${token}` }
         });

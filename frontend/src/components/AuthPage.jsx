@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft, Lock, Mail, User, Eye, EyeOff, AlertCircle, CheckCircle2, Film } from 'lucide-react';
 import { useCinema } from '../context/CinemaContext';
+import { apiUrl } from '../config/api';
 
 export default function AuthPage({ onBack: propOnBack, onAuthSuccess }) {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ export default function AuthPage({ onBack: propOnBack, onAuthSuccess }) {
     setError('');
     setLoading(true);
 
-    const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
+    const endpoint = apiUrl(isLogin ? '/api/auth/login' : '/api/auth/register');
     const payload = isLogin
       ? { email, password }
       : { name, email, password, role: selectedRole };

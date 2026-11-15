@@ -4,6 +4,7 @@ import {
   Building2, Wallet, CheckCircle2, AlertTriangle, ArrowRight,
   Lock, RefreshCw, Sparkles
 } from 'lucide-react';
+import { apiUrl } from '../config/api';
 
 function GooglePayLogo() {
   return (
@@ -119,7 +120,7 @@ export default function PaymentGatewayModal({
     try {
       // Step 1: Create Order handshake
       const token = localStorage.getItem('token');
-      const orderRes = await fetch('/api/payments/create-order', {
+      const orderRes = await fetch(apiUrl('/api/payments/create-order'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -138,7 +139,7 @@ export default function PaymentGatewayModal({
 
       // Step 2: Verify Payment & Confirm
       const paymentId = `PAY_IN_${Date.now()}_${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
-      const verifyRes = await fetch('/api/payments/verify', {
+      const verifyRes = await fetch(apiUrl('/api/payments/verify'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

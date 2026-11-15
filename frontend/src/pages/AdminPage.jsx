@@ -7,6 +7,7 @@ import {
   TrendingUp, Users, DollarSign, Percent
 } from 'lucide-react';
 import { useCinema } from '../context/CinemaContext';
+import { apiUrl } from '../config/api';
 
 export default function AdminPage() {
   const navigate = useNavigate();
@@ -72,10 +73,10 @@ export default function AdminPage() {
       const headers = { Authorization: `Bearer ${token}` };
 
       const [overviewRes, showsRes, logsRes, metaRes] = await Promise.all([
-        fetch('/api/admin/overview', { headers }),
-        fetch('/api/admin/shows', { headers }),
-        fetch('/api/admin/audit-logs', { headers }),
-        fetch('/api/admin/metadata', { headers })
+        fetch(apiUrl('/api/admin/overview'), { headers }),
+        fetch(apiUrl('/api/admin/shows'), { headers }),
+        fetch(apiUrl('/api/admin/audit-logs'), { headers }),
+        fetch(apiUrl('/api/admin/metadata'), { headers })
       ]);
 
       if (overviewRes.ok) {
@@ -125,7 +126,7 @@ export default function AdminPage() {
     const passwordToUse = authPassword || 'admin123';
 
     try {
-      let res = await fetch('/api/auth/login', {
+      let res = await fetch(apiUrl('/api/auth/login'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: emailToUse, password: passwordToUse })
@@ -133,7 +134,7 @@ export default function AdminPage() {
 
       if (!res.ok) {
         // Auto-register demo admin if not present
-        res = await fetch('/api/auth/register', {
+        res = await fetch(apiUrl('/api/auth/register'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -172,7 +173,7 @@ export default function AdminPage() {
 
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch('/api/admin/validate-ticket', {
+      const res = await fetch(apiUrl('/api/admin/validate-ticket'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -213,7 +214,7 @@ export default function AdminPage() {
     const token = localStorage.getItem('token');
 
     try {
-      const res = await fetch('/api/admin/shows', {
+      const res = await fetch(apiUrl('/api/admin/shows'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -243,7 +244,7 @@ export default function AdminPage() {
 
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch(`/api/admin/shows/${showId}`, {
+      const res = await fetch(apiUrl(`/api/admin/shows/${showId}`), {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
