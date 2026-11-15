@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Film, Search, MapPin, ChevronDown, User, LogOut, Ticket, X } from 'lucide-react';
+import { Film, Search, MapPin, ChevronDown, User, LogOut, X } from 'lucide-react';
 import { useCinema } from '../context/CinemaContext';
 
 export default function TopNavbar({

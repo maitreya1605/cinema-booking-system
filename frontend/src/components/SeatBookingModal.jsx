@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { X, CheckCircle2, Ticket } from 'lucide-react';
+import { X, CheckCircle2 } from 'lucide-react';
 
 function SeatButton({ seatId, num, isBooked, isSelected, onToggle }) {
   return (
@@ -261,12 +261,11 @@ export default function SeatBookingModal({
               <button
                 disabled={validSelectedSeats.length === 0 || isSubmitting}
                 onClick={handleConfirmBooking}
-                className={`w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center space-x-2 transition-all cursor-pointer ${validSelectedSeats.length === 0 || isSubmitting
+                className={`w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center transition-all cursor-pointer ${validSelectedSeats.length === 0 || isSubmitting
                     ? 'bg-gray-100 text-gray-400 cursor-not-allowed border border-gray-200'
                     : 'btn-cinema'
                   }`}
               >
-                <Ticket className="w-4 h-4" />
                 <span>{isSubmitting ? 'Reserving...' : `Confirm & Pay ₹${totalPrice}`}</span>
               </button>
             </div>

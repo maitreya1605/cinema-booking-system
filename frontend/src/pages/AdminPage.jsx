@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  Shield, BarChart3, Calendar, Clock, Film, Ticket, CheckCircle2,
+  Shield, BarChart3, Calendar, Clock, Film, CheckCircle2,
   AlertCircle, X, Plus, Trash2, Search, User, LogOut,
   ArrowRight, ShieldCheck, ShieldAlert, Activity, Check,
   TrendingUp, Users, DollarSign, Percent
@@ -440,7 +440,7 @@ export default function AdminPage() {
                 : 'bg-[#111319] text-gray-400 hover:text-white border border-white/5'
             }`}
           >
-            <Ticket className="w-4 h-4" />
+            <ShieldCheck className="w-4 h-4" />
             <span>Ticket Validator / Gate</span>
           </button>
 
@@ -489,7 +489,7 @@ export default function AdminPage() {
                     <div className="flex items-center justify-between text-gray-400 text-xs">
                       <span className="font-semibold uppercase tracking-wider text-[11px] font-mono-cinema">Total Bookings</span>
                       <div className="w-8 h-8 rounded-xl bg-sky-500/15 flex items-center justify-center">
-                        <Ticket className="w-4 h-4 text-sky-400" />
+                        <Users className="w-4 h-4 text-sky-400" />
                       </div>
                     </div>
                     <div className="mt-4">
@@ -616,9 +616,8 @@ export default function AdminPage() {
 
                 {/* Recent Bookings Transaction Table - Full width stretched */}
                 <div className="w-full rounded-2xl bg-[#111319] border border-white/10 p-5 sm:p-8 space-y-4 shadow-xl">
-                  <h3 className="text-lg font-bold text-white flex items-center space-x-2">
-                    <Ticket className="w-5 h-5 text-[#e5a93c]" />
-                    <span>Recent Customer Bookings & Validation State</span>
+                  <h3 className="text-lg font-bold text-white">
+                    Recent Customer Bookings & Validation State
                   </h3>
 
                   <div className="overflow-x-auto scrollbar-none w-full">
@@ -811,7 +810,7 @@ export default function AdminPage() {
               <div className="max-w-2xl mx-auto w-full space-y-6 animate-fade-in">
                 <div className="text-center space-y-1">
                   <div className="w-12 h-12 rounded-2xl bg-[#e5a93c]/15 border border-[#e5a93c]/30 text-[#e5a93c] mx-auto flex items-center justify-center mb-2">
-                    <Ticket className="w-6 h-6" />
+                    <ShieldCheck className="w-6 h-6" />
                   </div>
                   <h3 className="text-2xl font-bold text-white">Cinema Gate Ticket Validator</h3>
                   <p className="text-xs text-gray-400 max-w-md mx-auto">

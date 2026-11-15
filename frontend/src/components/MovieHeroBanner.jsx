@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Ticket } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 export default function MovieHeroBanner({ movie, onBookClick }) {
   const genresArray = Array.isArray(movie.genres)
@@ -71,9 +71,8 @@ export default function MovieHeroBanner({ movie, onBookClick }) {
           <div className="flex flex-wrap items-center gap-4 pt-4">
             <button
               onClick={onBookClick}
-              className="btn-cinema px-8 py-3.5 rounded-xl text-xs sm:text-sm tracking-wider uppercase cursor-pointer flex items-center space-x-2"
+              className="btn-cinema px-8 py-3.5 rounded-xl text-xs sm:text-sm tracking-wider uppercase cursor-pointer flex items-center justify-center font-bold"
             >
-              <Ticket className="w-4 h-4" />
               <span>Book Tickets</span>
             </button>
           </div>

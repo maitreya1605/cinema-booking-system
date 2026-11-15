@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Clapperboard, MapPin, Sparkles, Clock, Ticket, Navigation, ShieldCheck, Loader2 } from 'lucide-react';
+import { Clapperboard, MapPin, Sparkles, Clock, Navigation, ShieldCheck, Loader2 } from 'lucide-react';
 import { useCinema } from '../context/CinemaContext';
 
 export default function CinemasView({ onSelectShow, onBookMovie }) {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Ticket, Calendar, Clock, MapPin, QrCode, AlertCircle, Trash2, CheckCircle2 } from 'lucide-react';
+import { Film, Calendar, Clock, MapPin, QrCode, AlertCircle, Trash2, CheckCircle2 } from 'lucide-react';
 import { apiUrl } from '../config/api';
 
 export default function TicketsView({ onBookNew }) {
@@ -65,9 +65,8 @@ export default function TicketsView({ onBookNew }) {
     <div className="w-full flex flex-col space-y-6 animate-fade-in">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ede9e3] tracking-tight flex items-center space-x-3">
-            <Ticket className="w-6 h-6 text-[#e5a93c]" />
-            <span>Cinema Boarding Passes</span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#ede9e3] tracking-tight">
+            Cinema Boarding Passes
           </h2>
           <p className="text-xs text-gray-400 mt-1 font-mono-cinema">
             Active digital cinema passes, reserved seats & entrance verification tokens.
@@ -90,7 +89,7 @@ export default function TicketsView({ onBookNew }) {
       ) : tickets.length === 0 ? (
         <div className="py-20 flex flex-col items-center justify-center rounded-2xl bg-[#111319] border border-white/10 text-center p-8 shadow-xl">
           <div className="w-14 h-14 rounded-2xl bg-[#e5a93c]/10 border border-[#e5a93c]/20 flex items-center justify-center text-[#e5a93c] mb-4">
-            <Ticket className="w-7 h-7" />
+            <Film className="w-7 h-7" />
           </div>
           <h4 className="text-lg font-bold text-[#ede9e3]">No Active Boarding Passes</h4>
           <p className="text-xs text-gray-400 mt-1 max-w-sm leading-relaxed">
